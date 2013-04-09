@@ -3,9 +3,11 @@ bin/
 debug/
 FakesAssemblies/
 obj/
-packages/
+packages/*
 release/
 testresults/
 *.suo
 *.user
 .nuget/NuGet.exe
+
+!packages/repositories.config
