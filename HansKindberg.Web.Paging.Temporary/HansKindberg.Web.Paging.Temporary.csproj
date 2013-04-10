@@ -41,11 +41,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
+    <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\CodeAnalysis\SolutionSuppressions.cs">
@@ -55,6 +53,12 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="CodeAnalysis\AssemblySuppressions.cs" />
+    <Compile Include="IPagingResolver.cs" />
+    <Compile Include="IPagingResult.cs" />
+    <Compile Include="IPage.cs" />
+    <Compile Include="PagingResult.cs" />
+    <Compile Include="Page.cs" />
+    <Compile Include="PagingResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

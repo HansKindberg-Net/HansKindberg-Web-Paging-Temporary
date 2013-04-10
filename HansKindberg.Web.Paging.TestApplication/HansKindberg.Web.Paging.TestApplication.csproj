@@ -140,6 +140,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ListItem.cs" />
+    <Compile Include="Models\ViewModels\PagingSettingsViewModel.cs" />
     <Compile Include="Models\ViewModels\HomeViewModel.cs" />
     <Compile Include="Models\ViewModels\PagingViewModel.cs" />
     <Compile Include="Models\ViewModels\ViewModel.cs" />
@@ -183,6 +185,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Paging\Settings.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HansKindberg.Web.Paging.Temporary\HansKindberg.Web.Paging.Temporary.csproj">
+      <Project>{758620f8-9b47-486e-902d-08961858820c}</Project>
+      <Name>HansKindberg.Web.Paging.Temporary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Pager.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

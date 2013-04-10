@@ -20,7 +20,7 @@ namespace HansKindberg.Web.Paging.TestApplication.Controllers
 		{
 			base.PopulateModel(model);
 
-			model.Heading = model.Title = "Home";
+			model.Title = "Home";
 		}
 
 		#endregion

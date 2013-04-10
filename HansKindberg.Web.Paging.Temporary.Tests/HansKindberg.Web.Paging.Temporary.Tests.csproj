@@ -6,7 +6,7 @@
     <ProjectGuid>{A6EAEBE1-133B-495F-BE69-EBFFB494BFA3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HansKindberg.Web.Paging.Temporary.Tests</RootNamespace>
+    <RootNamespace>HansKindberg.Web.Tests.Paging</RootNamespace>
     <AssemblyName>HansKindberg.Web.Paging.Temporary.Tests</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -49,6 +49,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Web" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -70,6 +71,9 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="CodeAnalysis\AssemblySuppressions.cs" />
+    <Compile Include="PageTest.cs" />
+    <Compile Include="PagingResolverTest.cs" />
+    <Compile Include="PagingResultTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -84,6 +88,12 @@
     <None Include="..\HansKindberg.snk">
       <Link>HansKindberg.snk</Link>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HansKindberg.Web.Paging.Temporary\HansKindberg.Web.Paging.Temporary.csproj">
+      <Project>{758620f8-9b47-486e-902d-08961858820c}</Project>
+      <Name>HansKindberg.Web.Paging.Temporary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

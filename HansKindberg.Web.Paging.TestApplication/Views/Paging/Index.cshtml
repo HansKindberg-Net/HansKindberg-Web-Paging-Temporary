@@ -1,7 +1,20 @@
-﻿@model HansKindberg.Web.Paging.TestApplication.Models.ViewModels.PagingViewModel
+﻿@using HansKindberg.Web.Paging.TestApplication.Models;
+@using HansKindberg.Web.Paging.TestApplication.Models.ViewModels;
+@model PagingViewModel
 @section MainContent
 {
+	<h1>Paging</h1>
 	<div>
-		<p>Paging view</p>
-	</div>
+		@this.Html.Partial("~/Views/Shared/Pager.cshtml", this.Model.PagingResult)
+		<div style="clear: both"></div>
+		@if(this.Model.Records != null && this.Model.Records.Any())
+		{
+			@:<ul>
+			foreach(ListItem listItem in this.Model.Records)
+			{
+				<li><h2>@listItem.Heading</h2><p>@listItem.Information</p></li>
+			}
+			@:</ul>
+		}
+		@this.Html.Partial("~/Views/Shared/Pager.cshtml", this.Model.PagingResult)
 }

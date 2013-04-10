@@ -1,0 +1,58 @@
+﻿@using HansKindberg.Web.Paging;
+@model IPagingResult
+@if(this.Model != null && this.Model.Pages.Any())
+{
+	@:<ul style="clear: both; display: block;">
+		if(this.Model.FirstPageUrl == null)
+		{
+			<li style="float: left; list-style-type: none; margin-right: 1em;"><span>|&lt;</span></li>
+		}
+		else
+		{
+			<li style="float: left; list-style-type: none; margin-right: 1em;"><a href="@this.Model.FirstPageUrl.PathAndQuery" title="First">|&lt;</a></li>
+		}
+		if(this.Model.PreviousPageUrl == null)
+		{
+			<li style="float: left; list-style-type: none; margin-right: 1em;"><span>&lt;&lt;</span></li>
+		}
+		else
+		{
+			<li style="float: left; list-style-type: none; margin-right: 1em;"><a href="@this.Model.PreviousPageUrl.PathAndQuery" title="Previous">&lt;&lt;</a></li>
+		}
+		if(this.Model.PreviousPageGroupUrl != null)
+		{
+			<li style="float: left; list-style-type: none; margin-right: 1em;"><a href="@this.Model.PreviousPageGroupUrl.PathAndQuery" title="Previous group">...</a></li>
+		}
+		foreach(IPage page in this.Model.Pages)
+		{
+			if(page.Current)
+			{
+				<li style="background-color: red; float: left; list-style-type: none; margin-right: 1em;"><span>@page.Index</span></li>
+			}
+			else
+			{
+				<li style="float: left; list-style-type: none; margin-right: 1em;"><a href="@page.Url.PathAndQuery">@page.Index</a></li>
+			}
+		}
+		if(this.Model.NextPageGroupUrl != null)
+		{
+			<li style="float: left; list-style-type: none; margin-right: 1em;"><a href="@this.Model.NextPageGroupUrl.PathAndQuery" title="Next group">...</a></li>
+		}
+		if(this.Model.NextPageUrl == null)
+		{
+			<li style="float: left; list-style-type: none; margin-right: 1em;"><span>&gt;&gt;</span></li>
+		}
+		else
+		{
+			<li style="float: left; list-style-type: none; margin-right: 1em;"><a href="@this.Model.NextPageUrl.PathAndQuery" title="Next">&gt;&gt;</a></li>
+		}
+		if(this.Model.LastPageUrl == null)
+		{
+			<li style="float: left; list-style-type: none; margin-right: 1em;"><span>&gt;|</span></li>
+		}
+		else
+		{
+			<li style="float: left; list-style-type: none; margin-right: 1em;"><a href="@this.Model.LastPageUrl.PathAndQuery" title="Last">&gt;|</a></li>
+		}
+	@:</ul>
+}

@@ -1,0 +1,37 @@
+﻿@model HansKindberg.Web.Paging.TestApplication.Models.ViewModels.PagingSettingsViewModel
+@section MainContent
+{
+	<h1>Paging settings</h1>
+	<div>
+		@using (this.Html.BeginForm())
+		{
+			this.Html.ValidationSummary();
+			<fieldset>
+				<legend>Settings form</legend>
+				<ol>
+					<li>
+						@this.Html.LabelFor(model => model.NumberOfRecords)
+						@this.Html.TextBoxFor(model => model.NumberOfRecords)
+					</li>
+					<li>
+						@this.Html.LabelFor(model => model.PagingEnabled)
+						@this.Html.CheckBoxFor(model => model.PagingEnabled)
+					</li>
+					<li>
+						@this.Html.LabelFor(model => model.PageSize)
+						@this.Html.TextBoxFor(model => model.PageSize)
+					</li>
+					<li>
+						@this.Html.LabelFor(model => model.MaximumNumberOfDisplayedPages)
+						@this.Html.TextBoxFor(model => model.MaximumNumberOfDisplayedPages)
+					</li>
+					<li>
+						@this.Html.LabelFor(model => model.PageIndexQueryStringKey)
+						@this.Html.TextBoxFor(model => model.PageIndexQueryStringKey)
+					</li>
+				</ol>
+				<input type="submit" value="Save" />
+			</fieldset>
+	  }
+	</div>
+}
