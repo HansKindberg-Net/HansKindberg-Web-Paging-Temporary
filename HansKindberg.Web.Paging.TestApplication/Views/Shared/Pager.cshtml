@@ -3,7 +3,7 @@
 @if(this.Model != null && this.Model.Pages.Any())
 {
 	@:<ul style="clear: both; display: block;">
-		if(this.Model.FirstPageUrl == null)
+		if(this.Model.FirstPageUrl == null || this.Model.PageIndex == 0)
 		{
 			<li style="float: left; list-style-type: none; margin-right: 1em;"><span>|&lt;</span></li>
 		}
@@ -46,7 +46,7 @@
 		{
 			<li style="float: left; list-style-type: none; margin-right: 1em;"><a href="@this.Model.NextPageUrl.PathAndQuery" title="Next">&gt;&gt;</a></li>
 		}
-		if(this.Model.LastPageUrl == null)
+		if(this.Model.LastPageUrl == null || this.Model.PageIndex == this.Model.TotalNumberOfPages - 1)
 		{
 			<li style="float: left; list-style-type: none; margin-right: 1em;"><span>&gt;|</span></li>
 		}

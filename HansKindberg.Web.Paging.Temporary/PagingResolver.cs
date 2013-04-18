@@ -249,12 +249,12 @@ namespace HansKindberg.Web.Paging
 
 				pagingResult.Pages = pages.ToArray();
 
+				queryString.Set(this.PageIndexQueryStringKey, 0.ToString(CultureInfo.InvariantCulture));
+				uriBuilder.Query = queryString.ToString();
+				pagingResult.FirstPageUrl = uriBuilder.Uri;
+
 				if(pageIndex > 0)
 				{
-					queryString.Set(this.PageIndexQueryStringKey, 0.ToString(CultureInfo.InvariantCulture));
-					uriBuilder.Query = queryString.ToString();
-					pagingResult.FirstPageUrl = uriBuilder.Uri;
-
 					queryString.Set(this.PageIndexQueryStringKey, (pageIndex - 1).ToString(CultureInfo.InvariantCulture));
 					uriBuilder.Query = queryString.ToString();
 					pagingResult.PreviousPageUrl = uriBuilder.Uri;
@@ -267,12 +267,12 @@ namespace HansKindberg.Web.Paging
 					}
 				}
 
+				queryString.Set(this.PageIndexQueryStringKey, (totalNumberOfPages - 1).ToString(CultureInfo.InvariantCulture));
+				uriBuilder.Query = queryString.ToString();
+				pagingResult.LastPageUrl = uriBuilder.Uri;
+
 				if(pageIndex < totalNumberOfPages - 1)
 				{
-					queryString.Set(this.PageIndexQueryStringKey, (totalNumberOfPages - 1).ToString(CultureInfo.InvariantCulture));
-					uriBuilder.Query = queryString.ToString();
-					pagingResult.LastPageUrl = uriBuilder.Uri;
-
 					queryString.Set(this.PageIndexQueryStringKey, (pageIndex + 1).ToString(CultureInfo.InvariantCulture));
 					uriBuilder.Query = queryString.ToString();
 					pagingResult.NextPageUrl = uriBuilder.Uri;
